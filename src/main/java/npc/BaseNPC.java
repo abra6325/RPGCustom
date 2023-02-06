@@ -1,4 +1,4 @@
-package net.itsrelizc.npc;
+package npc;
 
 import java.io.IOException;
 
