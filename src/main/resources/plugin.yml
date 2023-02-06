@@ -1,0 +1,7 @@
+name: RPGCustoms
+version: '${project.version}'
+main: com.lifestealrpg.rpgcustoms.RPGCustoms
+prefix: [ RPGCustoms ]
+authors: [ Relizc, Abra6325 ]
+description: The Custom RPG plugin
+website: relizc.github.io
