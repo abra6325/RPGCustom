@@ -7,5 +7,5 @@ Handshaking is the first ever packet a server should sent to the managing system
 | Field | Name | Data Type | Description | Example |
 | --- | ----- | ------------ | ------------ | ------------ |
 | 0 | Packet ID | Byte | The packed ID that every packet should have | 0x01 |
-| 1 | RAM Code | Byte | The RAM Code of the server<br>abcde | 0x03 |
+| 1 | RAM Code | Byte | The RAM Code of the server.\abcde | 0x03 |
 | 2 | Server Registery ID | String | This ID will be used to identify a server in the future | np3s
