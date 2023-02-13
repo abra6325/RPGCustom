@@ -4,6 +4,6 @@ This part will just simply introduce the basic annotations and data structure of
 ---
 ### 0x01 Handshake
 Handshaking is the first ever packet a server should sent to the managing system, and for registering properly. It could also be used to change a server's status from `LAUNCHING` to `RUNNING`.
-|Field|Name|Data Type|Description|Example|
-|---|-----|------------|------------|
-|0|Packet ID|Byte|The packed ID that every packet should have|0x01|
+| Field | Name | Data Type | Description | Example |
+| --- | ----- | ------------ | ------------ |
+| 0 | Packet ID | Byte | The packed ID that every packet should have | 0x01 |
