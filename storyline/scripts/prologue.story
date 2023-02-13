@@ -1,0 +1,4 @@
+SPEAKER sk0
+SPEAKER sk1
+
+sk0 "Whoa FUCK YOU!"
