@@ -15,4 +15,4 @@ Handshaking is the first ever packet a server should sent to the managing system
 | 6 | Port | Short | Server Port. Used to verify packet integrity. | 11451 |
 
 **Example Python Packet Data**:
-b"\x01\x02\x04\x00np3s\x00\x2estandard-1.8.8_Dungeon_Main_Lobby_snp3s_public\x00\x1aLOCAL_DUNGEON_SCENE_VIEWER\xbb\x2c"
+b"\x01\x02\x0e\x00standard-1.8.8\x04\x00np3s\x00\x2estandard-1.8.8_Dungeon_Main_Lobby_snp3s_public\x00\x1aLOCAL_DUNGEON_SCENE_VIEWER\xbb\x2c"
