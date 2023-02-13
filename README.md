@@ -1,4 +1,4 @@
-# RPGCustom
+# Relizc Network Dungeon MMORPG Game.
 THIS IS A ThING U CAN USE TO MAKE A PLUGIN FOR RPF
 
 ## Story Creating
