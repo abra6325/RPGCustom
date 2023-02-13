@@ -6,6 +6,6 @@ This part will just simply introduce the basic annotations and data structure of
 Handshaking is the first ever packet a server should sent to the managing system, and for registering properly. It could also be used to change a server's status from `LAUNCHING` to `RUNNING`.
 | Field | Name | Data Type | Description | Example |
 | --- | ----- | ------------ | ------------ | ------------ |
-| 0 | Packet ID | Byte | The packed ID that every packet should have | 0x01 |
-| 1 | RAM Code | Byte | The RAM Code of the server.\nabcde | 0x03 |
+| 0 | Packet ID | Byte | The packed ID that every packet should have. | 0x01 |
+| 1 | RAM Code | Byte Enum | The RAM Code of the server.<br>**0x00** `T` Tiny Server<br>**0x01** `S` Small Server.<br>**0x02** `M` Medium Server<br>**0x03** `L` Large Server<br>**0x04** `G` Gigantic Server | 0x03 |
 | 2 | Server Registery ID | String | This ID will be used to identify a server in the future | np3s
