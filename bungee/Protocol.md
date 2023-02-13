@@ -8,10 +8,11 @@ Handshaking is the first ever packet a server should sent to the managing system
 | --- | ----- | ------------ | ------------ | ------------ |
 | 0 | Packet ID | Byte | The packed ID that every packet should have. | 0x01 |
 | 1 | RAM Code | Byte Enum | The RAM Code of the server.<br><br>**0x00** `T` Tiny Server<br>**0x01** `S` Small Server<br>**0x02** `M` Medium Server<br>**0x03** `L` Large Server<br>**0x04** `G` Gigantic Server | 0x03 |
-| 2 | Server Registery ID | String | This ID will be used to identify a server in the future | np3s |
-| 3 | Server Name | String | The name of this server. **If the server is already initlized in the control panel, the new name will overlap its old name** | standard-1.8.8_Dungeon_Main_Lobby_snp3s_public |
-| 4 | Server Type | Nullable String Enum | The server's type. Used to specify categories of avaliable servers | LOCAL_DUNGEON_SCENE_VIEWER |
-| 5 | Port | Short | Server Port. Used to verify packet integrity. | 11451 |
+| 2 | Server Version | String | The server version, basicailly the name of the server's template. | standard-1.8.8 |
+| 3 | Server Registery ID | String | This ID will be used to identify a server in the future | np3s |
+| 4 | Server Name | String | The name of this server. **If the server is already initlized in the control panel, the new name will overlap its old name** | standard-1.8.8_Dungeon_Main_Lobby_snp3s_public |
+| 5 | Server Type | Nullable String Enum | The server's type. Used to specify categories of avaliable servers | LOCAL_DUNGEON_SCENE_VIEWER |
+| 6 | Port | Short | Server Port. Used to verify packet integrity. | 11451 |
 
 **Example Python Packet Data**:
 b"\x01\x02\x04\x00np3s\x00\x2estandard-1.8.8_Dungeon_Main_Lobby_snp3s_public\x00\x1aLOCAL_DUNGEON_SCENE_VIEWER\xbb\x2c"
