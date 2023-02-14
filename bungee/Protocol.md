@@ -4,8 +4,9 @@ This part will just simply introduce the basic annotations and data structure of
 ## Data Types
 Here are some common data types that will be used in the protocol. Every data is written or encoded in [Little-Endian](https://en.wikipedia.org/wiki/Endianness).
 | Type | Bytes | Description |
-| ---------- | ------- | ----------------------- |
+| ---------- | ------- | ---------------------------- |
 | Byte | 1 | The most basic component of the packet data. Only takes 1 byte, and the values range from 0 ~ 255. |
+| Byte Enum | 1 | Basically a byte, but used to determine a enum in the protocol. **To read this data, use the same function as reading a byte `readByte()`** |
 
 ## Packets
 ### `0x01` Handshake
