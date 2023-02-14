@@ -7,6 +7,7 @@ Here are some common data types that will be used in the protocol. Every data is
 | ---------- | ------- | ---------------------------- |
 | Byte | 1 | The most basic component of the packet data. Only takes 1 byte, and the values range from 0 ~ 255. |
 | Byte Enum | 1 | Basically a byte, but used to determine a enum in the protocol. **To read this data, use the same function as reading a byte `readByte()`** |
+| Short | 2 | A number that ranges from 0 ~ 65535. The maximum writable short is 32767, but the maximum readable short is 65536.<br><br>**Reading a Short**:<br>To read a short, start by converting each byte to an integer. `ex. "\x08" to 8` Since every data is encoded in [Little-Endian](https://en.wikipedia.org/wiki/Endianness), read the 2 bytes by multiplying the first bit by 1 (16<sup>0</sup>) then the next byte by 16 (16<sup>1</sup>) |
 
 ## Packets
 ### `0x01` Handshake
