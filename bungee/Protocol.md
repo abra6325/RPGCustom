@@ -40,22 +40,13 @@ This ping packet should be sent whenever as possible. This packet should also be
 | 1 | RAM Code | Byte Enum | The RAM Code of the server. Used to identify the server. | 0x03 |
 | 2 | Server Registery ID | String | The server ID. Also used to identify the server. | np3s |
 | 3 | Server Name | Nullable String | The name of this server. Any new name that is sent will replace the old server name, so if the server does not want to update its name, sent a null string. | standard-1.8.8_Dungeon_Main_Lobby_snp3s_public |
-| 4 | Server Players | String Array | <table>
-    <tr>
-        <th>Field</th>
-        <th>Name</th>
-        <th>Data Type</th>
-        <th>Description</th>
-    </tr>
-    <tr>
-        <td>0</td>
-        <td>Player Name</td>
-        <td>String</td>
-        <td>The player's IGN. All lowercase.</td>
-    </tr>
-</table> | 
+| 4 | Server Players | String Array |  | 
 
 
 ## Server Packets
 Packets that are send by the managing system **only after a ping packet is sent by the client.**
 
+|                |ASCII                          |HTML                         |
+|----------------|-------------------------------|-----------------------------|
+|Single backticks|`'Isn't this fun?'`            |'Isn't this fun?'            |
+|Quotes          |`"Isn't this fun?"`            |<table>  <thead>  <tr>  <th></th>  <th>ASCII</th>  <th>HTML</th>  </tr>  </thead>  <tbody>  <tr>  <td>Single backticks</td>  <td><code>'Isn't this fun?'</code></td>  <td>‘Isn’t this fun?’</td>  </tr>  <tr>  <td>Quotes</td>  <td><code>"Isn't this fun?"</code></td>  <td>“Isn’t this fun?”</td>  </tr>  <tr>  <td>Dashes</td>  <td><code>-- is en-dash, --- is em-dash</code></td>  <td>– is en-dash, — is em-dash</td>  </tr>  </tbody>  </table>      |
