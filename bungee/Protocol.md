@@ -13,6 +13,7 @@ Here are some common data types that will be used in the protocol. Every data is
 | Signed Integer | 4 | A integer that is basically decreasing an unsigned integer by 2,147,483,648. | 0xff 0xff 0xff 0x7f → **2,147,483,647** | 0x04 |
 | String | 2 ~ 65537 | A short specifying the length of the string, and the rest are the data of the string | 0x03 0x00 A B C → **"ABC"** | 0x05 |
 | Type Array | 3 ~ (65535 * n) + 3 `where n is the type size` | An array that contains a specific type of data. The first byte specifies the type, and the next 2 bytes describes a short, which is the length of the array. | 0x01 0x02 0x00 0x01 0x00 0x01 0x00 → SHORT, SIZE 2, 1, 1 → **Short[1, 1]** | 0x06 |
+| Mixed Array | 3 ~ ...Basically Infinite | An array that has different elements inside. The first 2 bytes specifies a short, which is the length of the array. After the 2 bytes, is the most complex data. The components of a data item are:<br><br>**Component 0**: `Short` The total size of the following item (Component 1 & 2 )**Component 1**: `Byte` The data type.<br>**Component 2**: `Any` The data of that specific type.<br>**Component 3 (actually 0)**: The next data item.<br><br>This is only the content of 1 item in a mixed array. | 0x02 0x00 0x04 0x00 0x01 0x03 0x00 0x06 0x00 0x05 0x03 0x00 A B C → `Size:2, Items[{ByteSize:4, Short(3)}, {ByteSize:6, String("ABC")}]` → **`[3, "ABC"]`** |
 
 
 ## Client Packets
