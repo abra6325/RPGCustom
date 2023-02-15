@@ -12,7 +12,9 @@ Here are some common data types that will be used in the protocol. Every data is
 | (Unsigned) Integer | 4 | A number that ranges from 0 ~ 4294967296. It is basically just 4 bytes.<br><br>**Reading an Integer**:<br>The same as reading a short, except that you have to read 4 bytes instead of 2. |
 
 
-## Packets
+## Server Packets
+Packets that are send by the server.
+
 ### `0x01` Handshake
 Handshaking is the first ever packet a server should sent to the managing system, and for registering properly. It could also be used to change a server's status from `LAUNCHING` to `RUNNING`.
 | Field | Name | Data Type | Description | Example |
