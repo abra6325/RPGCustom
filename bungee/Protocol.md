@@ -7,9 +7,10 @@ Here are some common data types that will be used in the protocol. Every data is
 | ---------- | ------- | ---------------------------- | ----- |
 | Byte | 1 | The most basic component of the packet data. Only takes 1 byte, and the values range from 0 ~ 255. | 0xf5 |
 | Byte Enum | 1 | Basically a byte, but used to determine a enum in the protocol. **To read this data, use the same function as reading a byte `readByte()`** | 0x01 |
-| (Unsigned) Short | 2 | A number that ranges from 0 ~ 65535. The maximum writable short is 32767, but the maximum readable short is 65536.<br><br>**Reading a Short**:<br>To read a short, start by converting each byte to an integer. `ex. "\x08" to 8` Since every data is encoded in [Little-Endian](https://en.wikipedia.org/wiki/Endianness), read the 2 bytes by multiplying the first bit by 1 (16<sup>0</sup>) then the next byte by 16 (16<sup>1</sup>) | 0x05 0x00 → **5** |
-| Signed Short | 2 | A number that ranges from -32768 ~ 32767. This is just basically decreasing a unsigned short. |
-| (Unsigned) Integer | 4 | A number that ranges from 0 ~ 4294967296. It is basically just 4 bytes.<br><br>**Reading an Integer**:<br>The same as reading a short, except that you have to read 4 bytes instead of 2. |
+| (Unsigned) Short | 2 | A number that ranges from 0 ~ 65,535. The maximum writable short is 32,767, but the maximum readable short is 65,536.<br><br>**Reading a Short**:<br>To read a short, start by converting each byte to an integer. `ex. "\x08" to 8` Since every data is encoded in [Little-Endian](https://en.wikipedia.org/wiki/Endianness), read the 2 bytes by multiplying the first bit by 1 (16<sup>0</sup>) then the next byte by 16 (16<sup>1</sup>) | 0x05 0x00 → **5** |
+| Signed Short | 2 | A number that ranges from -32,768 ~ 32,767. This is just basically decreasing a unsigned short by 32768. | 0x05 0x00 → **-32763** |
+| (Unsigned) Integer | 4 | A number that ranges from 0 ~ 4,294,967,296. It is basically just 4 bytes.<br><br>**Reading an Integer**:<br>The same as reading a short, except that you have to read 4 bytes instead of 2. | 0xff 0xff 0xff 0x7f → **4,294,967,296** |
+| Signed Integer | 4 | A integer that is basically decreasing an unsigned integer by 2,147,483,648. | 0xff 0xff 0xff 0x7f → **2,147,483,647** |
 
 
 ## Server Packets
