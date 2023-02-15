@@ -36,11 +36,12 @@ b"\x01\x02\x0e\x00standard-1.8.8\x04\x00np3s\x00\x2estandard-1.8.8_Dungeon_Main_
 ### `0xf0` Ping
 This ping packet should be sent whenever as possible. This packet should also be put into a thread, since the managing system will pong back at most 10 seconds after this packet is sent. However, the managing system will send back the packet as soon as possible if there is an operation needed. All packets sent back by the managing system will be considered as [Server Packets](https://github.com/abra6325/RPGCustom/blob/master/bungee/Protocol.md#server-packets). The ping packet should also include update information of the server.
 | Field | Name | Data Type | Description | Example |
+| --- | ----- | ------------ | ------------ | ------------ |
 | 0 | Packet ID | Byte | The packet ID that every packet should have. | 0xf0 |
 | 1 | RAM Code | Byte Enum | The RAM Code of the server. Used to identify the server. | 0x03 |
 | 2 | Server Registery ID | String | The server ID. Also used to identify the server. | np3s |
 | 3 | Server Name | Nullable String | The name of this server. Any new name that is sent will replace the old server name, so if the server does not want to update its name, sent a null string. | standard-1.8.8_Dungeon_Main_Lobby_snp3s_public |
-| 4 | Server Players | String Array | d | 
+| 4 | Server Players | String Array | d | p | 
 
 
 ## Server Packets
