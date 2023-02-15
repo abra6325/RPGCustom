@@ -11,7 +11,7 @@ Here are some common data types that will be used in the protocol. Every data is
 | Signed Short | 2 | A number that ranges from -32,768 ~ 32,767. This is just basically decreasing a unsigned short by 32768. | 0x05 0x00 → **-32763** | 0x02 |
 | (Unsigned) Integer | 4 | A number that ranges from 0 ~ 4,294,967,296. It is basically just 4 bytes.<br><br>**Reading an Integer**:<br>The same as reading a short, except that you have to read 4 bytes instead of 2. | 0xff 0xff 0xff 0x7f → **4,294,967,296** | 0x03 |
 | Signed Integer | 4 | A integer that is basically decreasing an unsigned integer by 2,147,483,648. | 0xff 0xff 0xff 0x7f → **2,147,483,647** | 0x04 |
-| String | 2 ~ 65537 | A short specifying the length of the string, and the rest are the data of the string | 0x05 |
+| String | 2 ~ 65537 | A short specifying the length of the string, and the rest are the data of the string | 0x03 0x00 A B C → **"ABC"** | 0x05 |
 | Type Array | 3 ~ (65535 * n) + 3 `where n is the type size` | An array that contains a specific type of data. The first byte specifies the type, and the next 2 bytes describes a short, which is the length of the array. | 0x01 0x02 0x00 0x01 0x00 0x01 0x00 → SHORT, SIZE 2, 1, 1 → **Short[1, 1]** | 0x06 |
 
 
