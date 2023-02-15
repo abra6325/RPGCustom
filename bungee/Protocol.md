@@ -17,7 +17,6 @@ Here are some common data types that will be used in the protocol. Every data is
 ## Client Packets
 Packets that are send by the client.
 
----
 
 ### `0x01` Handshake
 Handshaking is the first ever packet a server should sent to the managing system, and for registering properly. It could also be used to change a server's status from `LAUNCHING` to `RUNNING`.
@@ -34,7 +33,6 @@ Handshaking is the first ever packet a server should sent to the managing system
 **Example Python Packet Data**:
 b"\x01\x02\x0e\x00standard-1.8.8\x04\x00np3s\x00\x2estandard-1.8.8_Dungeon_Main_Lobby_snp3s_public\x00\x1aLOCAL_DUNGEON_SCENE_VIEWER\xbb\x2c"
 
----
 ### `0x02` Ping
 This ping packet should be sent whenever as possible. This packet should also be put into a thread, since the managing system will pong back at most 10 seconds after this packet is sent. However, the managing system will send back the packet as soon as possible if there is an operation needed. All packets sent back by the managing system will be considered as Server Packets.
 
