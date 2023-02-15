@@ -17,6 +17,8 @@ Here are some common data types that will be used in the protocol. Every data is
 ## Client Packets
 Packets that are send by the client.
 
+---
+
 ### `0x01` Handshake
 Handshaking is the first ever packet a server should sent to the managing system, and for registering properly. It could also be used to change a server's status from `LAUNCHING` to `RUNNING`.
 | Field | Name | Data Type | Description | Example |
