@@ -3,15 +3,16 @@ This part will just simply introduce the basic annotations and data structure of
 
 ## Data Types
 Here are some common data types that will be used in the protocol. Every data is written or encoded in [Little-Endian](https://en.wikipedia.org/wiki/Endianness).
-| Type | Bytes | Description | Example |
-| ---------- | ------- | ---------------------------- | ----- |
-| Byte | 1 | The most basic component of the packet data. Only takes 1 byte, and the values range from 0 ~ 255. | 0xf5 |
-| Byte Enum | 1 | Basically a byte, but used to determine a enum in the protocol. **To read this data, use the same function as reading a byte `readByte()`** | 0x01 |
-| (Unsigned) Short | 2 | A number that ranges from 0 ~ 65,535. The maximum writable short is 32,767, but the maximum readable short is 65,536.<br><br>**Reading a Short**:<br>To read a short, start by converting each byte to an integer. `ex. "\x08" to 8` Since every data is encoded in [Little-Endian](https://en.wikipedia.org/wiki/Endianness), read the 2 bytes by multiplying the first bit by 1 (16<sup>0</sup>) then the next byte by 16 (16<sup>1</sup>) | 0x05 0x00 → **5** |
-| Signed Short | 2 | A number that ranges from -32,768 ~ 32,767. This is just basically decreasing a unsigned short by 32768. | 0x05 0x00 → **-32763** |
-| (Unsigned) Integer | 4 | A number that ranges from 0 ~ 4,294,967,296. It is basically just 4 bytes.<br><br>**Reading an Integer**:<br>The same as reading a short, except that you have to read 4 bytes instead of 2. | 0xff 0xff 0xff 0x7f → **4,294,967,296** |
-| Signed Integer | 4 | A integer that is basically decreasing an unsigned integer by 2,147,483,648. | 0xff 0xff 0xff 0x7f → **2,147,483,647** |
-| String | 2 ~ 65537 | A short specifying the length of the string, and the rest are the data of the string |
+| Type | Bytes | Description | Example | Type Byte |
+| ---------- | ------- | ---------------------------- | ----- | ----- |
+| Byte | 1 | The most basic component of the packet data. Only takes 1 byte, and the values range from 0 ~ 255. | 0xf5 | 0x00
+| Byte Enum | 1 | Basically a byte, but used to determine a enum in the protocol. **To read this data, use the same function as reading a byte `readByte()`** | 0x01 | 0x00 |
+| (Unsigned) Short | 2 | A number that ranges from 0 ~ 65,535. The maximum writable short is 32,767, but the maximum readable short is 65,536.<br><br>**Reading a Short**:<br>To read a short, start by converting each byte to an integer. `ex. "\x08" to 8` Since every data is encoded in [Little-Endian](https://en.wikipedia.org/wiki/Endianness), read the 2 bytes by multiplying the first bit by 1 (16<sup>0</sup>) then the next byte by 16 (16<sup>1</sup>) | 0x05 0x00 → **5** | 0x01 |
+| Signed Short | 2 | A number that ranges from -32,768 ~ 32,767. This is just basically decreasing a unsigned short by 32768. | 0x05 0x00 → **-32763** | 0x02 |
+| (Unsigned) Integer | 4 | A number that ranges from 0 ~ 4,294,967,296. It is basically just 4 bytes.<br><br>**Reading an Integer**:<br>The same as reading a short, except that you have to read 4 bytes instead of 2. | 0xff 0xff 0xff 0x7f → **4,294,967,296** | 0x03 |
+| Signed Integer | 4 | A integer that is basically decreasing an unsigned integer by 2,147,483,648. | 0xff 0xff 0xff 0x7f → **2,147,483,647** | 0x04 |
+| String | 2 ~ 65537 | A short specifying the length of the string, and the rest are the data of the string | 0x05 |
+| Type Array | 3 ~ (65535 * n) + 3 `where n is the type size` | An array that contains a specific type of data. The first byte specifies the type, and the next 2 bytes describes a short, which is the length of the array. | 0x01 0x02 0x00 0x01 0x00 0x01 0x00 → SHORT, SIZE 2, 1, 1 → **Short[1, 1]** | 0x06 |
 
 
 ## Client Packets
@@ -41,7 +42,7 @@ This ping packet should be sent whenever as possible. This packet should also be
 | 1 | RAM Code | Byte Enum | The RAM Code of the server. Used to identify the server. | 0x03 |
 | 2 | Server Registery ID | String | The server ID. Also used to identify the server. | np3s |
 | 3 | Server Name | Nullable String | The name of this server. Any new name that is sent will replace the old server name, so if the server does not want to update its name, sent a null string. | standard-1.8.8_Dungeon_Main_Lobby_snp3s_public |
-| 4 | Server Players | String Array | <table>    <thead>        <tr>            <th>Field</th>            <th>Name</th>            <th>Data Type</th>            <th>Description</th>        </tr>    </thead>    <tr>        <td>0</td>        <td>Player Name</td>        <td>String</td>        <td>The player's IGN. All lowercase.</td>    </tr></table> |
+| 4 | Server Players | Mixed Array | An array of player data. <table>    <thead>        <tr>            <th>Field</th>            <th>Name</th>            <th>Data Type</th>            <th>Description</th>        </tr>    </thead>    <tr>        <td>0</td>        <td>Player Name</td>        <td>String</td>        <td>The player's IGN. All lowercase.</td>    </tr></table> |
 
 
 ## Server Packets
