@@ -40,7 +40,7 @@ This ping packet should be sent whenever as possible. This packet should also be
 | 1 | RAM Code | Byte Enum | The RAM Code of the server. Used to identify the server. | 0x03 |
 | 2 | Server Registery ID | String | The server ID. Also used to identify the server. | np3s |
 | 3 | Server Name | Nullable String | The name of this server. Any new name that is sent will replace the old server name, so if the server does not want to update its name, sent a null string. | standard-1.8.8_Dungeon_Main_Lobby_snp3s_public |
-| 4 | Server Players | String Array |  | 
+| 4 | Server Players | String Array | d | 
 
 
 ## Server Packets
