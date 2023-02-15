@@ -22,7 +22,7 @@ Packets that are send by the client.
 Handshaking is the first ever packet a server should sent to the managing system, and for registering properly. It could also be used to change a server's status from `LAUNCHING` to `RUNNING`.
 | Field | Name | Data Type | Description | Example |
 | --- | ----- | ------------ | ------------ | ------------ |
-| 0 | Packet ID | Byte | The packed ID that every packet should have. | 0x01 |
+| 0 | Packet ID | Byte | The packet ID that every packet should have. | 0x01 |
 | 1 | RAM Code | Byte Enum | The RAM Code of the server.<br><br>**0x00** `T` Tiny Server<br>**0x01** `S` Small Server<br>**0x02** `M` Medium Server<br>**0x03** `B` Big Server<br>**0x04** `G` Gigantic Server | 0x03 |
 | 2 | Server Version | String | The server version, basicailly the name of the server's template. | standard-1.8.8 |
 | 3 | Server Registery ID | String | This ID will be used to identify a server in the future | np3s |
@@ -33,8 +33,15 @@ Handshaking is the first ever packet a server should sent to the managing system
 **Example Python Packet Data**:
 b"\x01\x02\x0e\x00standard-1.8.8\x04\x00np3s\x00\x2estandard-1.8.8_Dungeon_Main_Lobby_snp3s_public\x00\x1aLOCAL_DUNGEON_SCENE_VIEWER\xbb\x2c"
 
-### `0x02` Ping
-This ping packet should be sent whenever as possible. This packet should also be put into a thread, since the managing system will pong back at most 10 seconds after this packet is sent. However, the managing system will send back the packet as soon as possible if there is an operation needed. All packets sent back by the managing system will be considered as Server Packets.
+### `0xf0` Ping
+This ping packet should be sent whenever as possible. This packet should also be put into a thread, since the managing system will pong back at most 10 seconds after this packet is sent. However, the managing system will send back the packet as soon as possible if there is an operation needed. All packets sent back by the managing system will be considered as [Server Packets](https://github.com/abra6325/RPGCustom/blob/master/bungee/Protocol.md#server-packets). The ping packet should also include update information of the server.
+| Field | Name | Data Type | Description | Example |
+| 0 | Packet ID | Byte | The packet ID that every packet should have. | 0xf0 |
+| 1 | RAM Code | Byte Enum | The RAM Code of the server. Used to identify the server. | 0x03 |
+| 2 | Server Registery ID | String | The server ID. Also used to identify the server. | np3s |
+| 3 | Server Name | Nullable String | The name of this server. Any new name that is sent will replace the old server name, so if the server does not want to update its name, sent a null string. | standard-1.8.8_Dungeon_Main_Lobby_snp3s_public |
+| 4 | Server Players | String Array | Contains all the player's information.<br><table>            <tr>                <th>Field</th>                <th>Name</th>                <th>Data Type</th>                <th>Description</th>            </tr>            <tr>                <td>0</td>                <td>Player Name</td>                <td>String</td>                <td>The player's IGN. All lowercase.</td>            </tr>        </table> | 
+
 
 ## Server Packets
 Packets that are send by the managing system **only after a ping packet is sent by the client.**
