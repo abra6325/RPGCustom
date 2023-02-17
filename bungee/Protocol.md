@@ -37,7 +37,7 @@ Handshaking is the first ever packet a server should sent to the managing system
 b"\x01\x02\x0e\x00standard-1.8.8\x04\x00np3s\x00\x2estandard-1.8.8_Dungeon_Main_Lobby_snp3s_public\x00\x1aLOCAL_DUNGEON_SCENE_VIEWER\xbb\x2c"
 
 ### `0xf0` Ping
-This ping packet should be sent whenever as possible. This packet should also be put into a thread, since the managing system will pong back at most 10 seconds after this packet is sent. However, the managing system will send back the packet as soon as possible if there is an operation needed. All packets sent back by the managing system will be considered as [Server Packets](https://github.com/abra6325/RPGCustom/blob/master/bungee/Protocol.md#server-packets). The ping packet should also include update information of the server.
+This ping packet should be sent whenever as possible. This packet should also be put into a thread, since the managing system will pong back at most 1 seconds after this packet is sent. However, the managing system will send back the packet as soon as possible if there is an operation needed. All packets sent back by the managing system will be considered as [Server Packets](https://github.com/abra6325/RPGCustom/blob/master/bungee/Protocol.md#server-packets). The ping packet should also include update information of the server.
 | Field | Name | Data Type | Description | Example |
 | --- | ----- | ------------ | ------------ | ------------ |
 | 0 | Packet ID | Byte | The packet ID that every packet should have. | 0xf0 |
