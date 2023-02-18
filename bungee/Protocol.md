@@ -48,6 +48,16 @@ This ping packet should be sent whenever as possible. This packet should also be
 | 5 | Server RAM Usage | Long | The amount of RAM used by the server in MB | 114514 |
 | 6 | Server Players | Type Array of Mixed Array | An array of player data.<br><table>    <thead>        <tr>            <th>Data Type</th>            <th>Field</th>            <th>Name</th>            <th>Data Type</th>            <th>Description</th>        </tr>    </thead>    <tr>        <td rowspan="4">Mixed Array</td>        <td>0</td>        <td>Player Name</td>        <td>String</td>        <td>The player\'s IGN. All lowercase.</td>    </tr>    <tr>        <td>1</td>        <td>Has UUID</td>        <td>Boolean</td>        <td>Whether the player has an UUID or not. If this is true, the procotol will not skip the next field.</td>    </tr>    <tr>        <td>2</td>        <td>Player UUID</td>        <td>String</td>        <td>The player\'s UUID. This field will be present if field 1 is true. </td>    </tr>    <tr>        <td>3</td>        <td>Is Moderator</td>        <td>Boolean</td>        <td>Whether this player is a moderator or not. </td>    </tr></table>  |
 
+### `0xa0` Alert Message
+Make the protocol alert a message.
+| Field | Name | Data Type | Description | Example |
+| --- | ----- | ------------ | ------------ | ------------ |
+| 0 | Packet ID | Byte | The packet ID that every packet should have. | 0xf0 |
+| 1 | RAM Code | Byte Enum | The RAM Code of the server. Used to identify the server. | 0x03 |
+| 2 | Server Registery ID | String | The server ID. Also used to identify the server. | np3s |
+| 3 | Message Type | Byte Enum | The message type.<br><br>`0x00` Info<br>`0x01` Warning<br>`0x02` Error | 0x02 |
+| 4 | Message | String | The message that you want to send. | Whats going on??? HEYYYA |
+
 
 ## Server Packets
 Packets that are send by the managing system **only after a ping packet is sent by the client.**
