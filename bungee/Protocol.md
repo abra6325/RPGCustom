@@ -59,3 +59,10 @@ Make the server kick a player from it (kicking the player out of the proxy)
 | 0 | Packet ID | Byte | The packet ID that every packet should have. | 0xf0 |
 | 1 | Player Name | String | The player's name | Relizc |
 | 2 | Reason | String | The reason that the player is kicked | Too Dumb |
+
+## `0xc4` Not Found
+Send by the server when some request's parameters is not found.
+| Field | Name | Data Type | Description | Example |
+| --- | ----- | ------------ | ------------ | ------------ |
+| 0 | Packet ID | Byte | The packet ID that every packet should have. | 0xf0 |
+| 1 | Message | String | HEYYAHEYYAYA? Whats going on? (The error message) | NeverGonna Give YouUp |
