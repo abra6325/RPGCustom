@@ -58,6 +58,16 @@ Make the protocol alert a message.
 | 3 | Message Type | Byte Enum | The message type.<br><br>`0x00` Info<br>`0x01` Warning<br>`0x02` Error | 0x02 |
 | 4 | Message | String | The message that you want to send. | Whats going on??? HEYYYA |
 
+### `0xa1` Commit Log
+Sends whenever a server log is made.
+| Field | Name | Data Type | Description | Example |
+| --- | ----- | ------------ | ------------ | ------------ |
+| 0 | Packet ID | Byte | The packet ID that every packet should have. | 0xf0 |
+| 1 | RAM Code | Byte Enum | The RAM Code of the server. Used to identify the server. | 0x03 |
+| 2 | Server Registery ID | String | The server ID. Also used to identify the server. | np3s |
+| 3 | Log Type | Byte Enum | The log type.<br><br>`0x00` Info<br>`0x01` Warning<br>`0x02` Error | 0x02 |
+| 4 | Log | String | The log that you want to send. | Whats going on??? HEYYYA |
+
 
 ## Server Packets
 Packets that are send by the managing system **only after a ping packet is sent by the client.**
