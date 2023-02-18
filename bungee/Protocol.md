@@ -60,7 +60,7 @@ Make the server kick a player from it (kicking the player out of the proxy)
 | 1 | Player Name | String | The player's name | Relizc |
 | 2 | Reason | String | The reason that the player is kicked | Too Dumb |
 
-## `0xc4` Not Found
+### `0xc4` Not Found
 Send by the server when some request's parameters is not found.
 | Field | Name | Data Type | Description | Example |
 | --- | ----- | ------------ | ------------ | ------------ |
