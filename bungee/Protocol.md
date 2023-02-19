@@ -48,6 +48,13 @@ This ping packet should be sent whenever as possible. This packet should also be
 | 5 | Server RAM Usage | Long | The amount of RAM used by the server in MB | 114514 |
 | 6 | Server Players | Type Array of Mixed Array | An array of player data.<br><table>    <thead>        <tr>            <th>Data Type</th>            <th>Field</th>            <th>Name</th>            <th>Data Type</th>            <th>Description</th>        </tr>    </thead>    <tr>        <td rowspan="4">Mixed Array</td>        <td>0</td>        <td>Player Name</td>        <td>String</td>        <td>The player\'s IGN. All lowercase.</td>    </tr>    <tr>        <td>1</td>        <td>Has UUID</td>        <td>Boolean</td>        <td>Whether the player has an UUID or not. If this is true, the procotol will not skip the next field.</td>    </tr>    <tr>        <td>2</td>        <td>Player UUID</td>        <td>String</td>        <td>The player\'s UUID. This field will be present if field 1 is true. </td>    </tr>    <tr>        <td>3</td>        <td>Is Moderator</td>        <td>Boolean</td>        <td>Whether this player is a moderator or not. </td>    </tr></table>  |
 
+### `0xe0` BungeeCord Ping
+It is the same ping packet as the previous one, except for this one is sent by the bungeecord plugin.
+| Field | Name | Data Type | Description | Example |
+| --- | ----- | ------------ | ------------ | ------------ |
+| 0 | Packet ID | Byte | The packet ID that every packet should have. | 0xe0 |
+| 1 | Player Amount | Short | The number of players | 11451 |
+
 ### `0xa0` Alert Message
 Make the protocol alert a message.
 | Field | Name | Data Type | Description | Example |
