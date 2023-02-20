@@ -109,6 +109,7 @@ Adds a server into the avaliable server lists.
 | 3 | Port | Short | Port of the server | 11451 |
 | 4 | Category | Byte Enum | The Category of the server | 0x01 |
 | 5 | Sub Category | Short | Type of subcat | 32 |
+
 **Here are current avaliable server categories `ID:SubCat`**:
 `0x00` Verification
 `0x01` Lobby
