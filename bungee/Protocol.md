@@ -55,6 +55,12 @@ It is the same ping packet as the previous one, except for this one is sent by t
 | 0 | Packet ID | Byte | The packet ID that every packet should have. | 0xe0 |
 | 1 | Player Amount | Short | The number of players | 11451 |
 
+### `0xe1` BungeeCord Login Sucess
+Yay bungeecord is ready.
+| Field | Name | Data Type | Description | Example |
+| --- | ----- | ------------ | ------------ | ------------ |
+| 0 | Packet ID | Byte | The packet ID that every packet should have. | 0xe0 |
+
 ### `0xa0` Alert Message
 Make the protocol alert a message.
 | Field | Name | Data Type | Description | Example |
@@ -92,6 +98,15 @@ Basically making the protocol say "Ok you smartie your packet is correct."
 | Field | Name | Data Type | Description | Example |
 | --- | ----- | ------------ | ------------ | ------------ |
 | 0 | Packet ID | Byte | The packet ID that every packet should have. | 0xf0 |
+
+### `0xe2` BungeeCord Create Server
+Adds a server into the avaliable server lists.
+| Field | Name | Data Type | Description | Example |
+| --- | ----- | ------------ | ------------ | ------------ |
+| 0 | Packet ID | Byte | The packet ID that every packet should have. | 0xf0 |
+| 1 | RAM ID | Byte Enum | The RAM ID | 0x00 |
+| 2 | Server ID | String | The server ID | abcd |
+| 3 | Port | Short | Port of the server | 11451 |
 
 ### `0xc1` Down
 Send by the server when it is too fucking busy. (Not used)
