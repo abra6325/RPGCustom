@@ -107,6 +107,17 @@ Adds a server into the avaliable server lists.
 | 1 | RAM ID | Byte Enum | The RAM ID | 0x00 |
 | 2 | Server ID | String | The server ID | abcd |
 | 3 | Port | Short | Port of the server | 11451 |
+| 4 | Category | Byte Enum | The Category of the server | 0x01 |
+| 5 | Sub Category | Short | Type of subcat | 32 |
+**Here are current avaliable server categories `ID:SubCat`**:
+`0x00` Verification
+`0x01` Lobby
+`0x02` SMP Lobby
+`0x03` DeathSwap Lobby
+`0x04` Dungeon Lobby
+`0xa0:0` Dungeon Large Base 
+`0xa0:1` Dungeon Small Base
+`0xaf` Dungeon Scene Animation
 
 ### `0xc1` Down
 Send by the server when it is too fucking busy. (Not used)
