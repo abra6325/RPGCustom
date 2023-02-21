@@ -110,6 +110,14 @@ Adds a server into the avaliable server lists.
 | 4 | Category | Byte Enum | The Category of the server | 0x01 |
 | 5 | Sub Category | Short | Type of subcat | 32 |
 
+### `0xe3` BungeeCord Remove Server
+Yikes this server closed.
+| Field | Name | Data Type | Description | Example |
+| --- | ----- | ------------ | ------------ | ------------ |
+| 0 | Packet ID | Byte | The packet ID that every packet should have. | 0xf0 |
+| 1 | RAM ID | Byte Enum | The RAM ID | 0x00 |
+| 2 | Server ID | String | The server ID | abcd |
+
 **Here are current avaliable server categories `ID:SubCat`**:
 `0x00` Verification
 `0x01` Lobby
