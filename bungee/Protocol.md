@@ -61,6 +61,12 @@ Yay bungeecord is ready.
 | --- | ----- | ------------ | ------------ | ------------ |
 | 0 | Packet ID | Byte | The packet ID that every packet should have. | 0xe0 |
 
+### `0xe2` Request Getting BungeeCord Servers
+This packet is sent by the client when it needs to fetch all the server data. It will return a packet with all servers
+| Field | Name | Data Type | Description | Example |
+| --- | ----- | ------------ | ------------ | ------------ |
+| 0 | Packet ID | Byte | The packet ID that every packet should have. | 0xe0 |
+
 ### `0xa0` Alert Message
 Make the protocol alert a message.
 | Field | Name | Data Type | Description | Example |
