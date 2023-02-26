@@ -124,6 +124,13 @@ Yikes this server closed.
 | 1 | RAM ID | Byte Enum | The RAM ID | 0x00 |
 | 2 | Server ID | String | The server ID | abcd |
 
+### `0xe4` Listing BungeeCord Servers
+Yikes this server closed.
+| Field | Name | Data Type | Description | Example |
+| --- | ----- | ------------ | ------------ | ------------ |
+| 0 | Packet ID | Byte | The packet ID that every packet should have. | 0xf0 |
+| 1 | Servers | Type Array of Mixed Array | Server Details<br> | 0x00 |
+
 **Here are current avaliable server categories `ID:SubCat`**:
 `0x00` Verification
 `0x01` Lobby
