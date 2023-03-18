@@ -2,10 +2,10 @@
 THIS IS A ThING U CAN USE TO MAKE A PLUGIN FOR RPF
 
 ## Server RAM Categorization
-`T` **Tiny Server**: Server RAM < 256 MB (262,144 Bytes)
-`S` **Small Server**: Server RAM >= 256 MB (262,144 Bytes) < 512 MB (524,288 Bytes)
-`M` **Medium Server**: Server RAM >= 512 MB (524,288 Bytes) < 1 GB (1,048,756 Bytes)
-`B` **Big Server**: Server RAM >= 1GB (1,048,756) < 8 GB (8,388,608 Bytes)
+`T` **Tiny Server**: Server RAM < 256 MB (262,144 Bytes)<br>
+`S` **Small Server**: Server RAM >= 256 MB (262,144 Bytes) < 512 MB (524,288 Bytes)<br><br>
+`M` **Medium Server**: Server RAM >= 512 MB (524,288 Bytes) < 1 GB (1,048,756 Bytes)<br>
+`B` **Big Server**: Server RAM >= 1GB (1,048,756) < 8 GB (8,388,608 Bytes)<br>
 `G` **Gigantic Server**: Server RAM >= 8GB (8,388,608 Bytes)
 
 ## Story Creating
