@@ -1,0 +1,14 @@
+name: RSBundler
+main: net.itsrelizc.global.RawMain
+version: "stable-3.33.27"
+author: Relizc
+commands:
+   libraryversion:
+      description: command
+      usage: /libraryversion
+   npc:
+      description: cmd
+      usage: /npc
+   menu1:
+      description: menu demo
+      usage: /menu1
