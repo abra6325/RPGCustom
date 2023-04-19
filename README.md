@@ -24,32 +24,32 @@ This is the most complicated part in the creation process. The scene is no longe
 Here are some codes that will display at the bottom of your disconnect screen:
 btw it could be a hex code or a string <3
 
-### `0xA000072` Disallowed for Invalid Connection Token
+### `0x0000072` Disallowed for Invalid Connection Token
 This error seldomly happens, but if you got kicked, reconnect, and you should be able to play again.
 
 **Fixes**: Reconnect
 
-### `0x70000AB7` Disallowed for Unstable Network
+### `0x00000AB7` Disallowed for Unstable Network
 If you recieve this code, you probably should ~~get a better wifi router lmfao~~ check your internet connection and reconnect
 
 **Fixes**: Fix wifi + reconnect
 
-### `0x70000A15` Disallowed for Regulation Purposes
+### `0x00000A15` Disallowed for Regulation Purposes
 If you recieve this code, you are 99.99% banned from the server.
 
 **Fixes**: Try appealing, but it might not work.
 
-### `0x70000A16` Disallowed for Server Unexpected Error
+### `0x00000A16` or `SV_OVERWEIGHT` or `SV_UNHANDLED_REQUEST` Disallowed for Server Unexpected Error
 If you recieve this code, the server probably encountered an error.
 
 **Fixes**: Try reconnecting in a moment. If it doesnt work, the server might be in **Maintence Mode** or it is just broken
 
-### `0x700000B15` Kicked for Regulation Purposes
+### `0x000000B15` Kicked for Regulation Purposes
 If you recieve this code, you are 99.99% banned from the server.
 
 **Fixes**: Try appealing, but it might not work.
 
-### `0x70000B16` Disallowed for Server Unexpected Error
+### `0x00000B16` Disallowed for Server Unexpected Error
 If you recieve this code, the server probably encountered an error.
 
 **Fixes**: Try reconnecting in a moment. If it doesnt work, the server might be in **Maintence Mode** or it is just broken
