@@ -19,3 +19,37 @@ Attach or play an animation in a scene by using `net.itsrelizc.scene.Scene#.atta
 
 ## Scene Creating
 This is the most complicated part in the creation process. The scene is no longer a file with a bunch of commands anymore. Instead, it is intended to implement the `net.itsrelizc.scene.Scene` class. Users could `this.attachAnimation(AnimationFile file)` to attach an animation and use the above story creating method to attach dialogues. Therefore, the scene files are hard-coded into the package `net.itsrelizc.scenes`.
+
+## HOLY SHIT CONNECTION ERRORS!!!
+Here are some codes that will display at the bottom of your disconnect screen:
+btw it could be a hex code or a string <3
+
+### `0xA000072` Disallowed for Invalid Connection Token
+This error seldomly happens, but if you got kicked, reconnect, and you should be able to play again.
+
+**Fixes**: Reconnect
+
+### `0xA00000B7` Disallowed for Unstable Network
+If you recieve this code, you probably should ~~get a better wifi router lmfao~~ check your internet connection and reconnect
+
+**Fixes**: Fix wifi + reconnect
+
+### `0xA0000015` Disallowed for Regulation Purposes
+If you recieve this code, you are 99.99% banned from the server.
+
+**Fixes**: Try appealing, but it might not work.
+
+### `0xA0000016` Disallowed for Server Unexpected Error
+If you recieve this code, the server probably encountered an error.
+
+**Fixes**: Try reconnecting in a moment. If it doesnt work, the server might be in **Maintence Mode** or it is just broken
+
+### `0xB00000015` Kicked for Regulation Purposes
+If you recieve this code, you are 99.99% banned from the server.
+
+**Fixes**: Try appealing, but it might not work.
+
+### `0xB0000016` Disallowed for Server Unexpected Error
+If you recieve this code, the server probably encountered an error.
+
+**Fixes**: Try reconnecting in a moment. If it doesnt work, the server might be in **Maintence Mode** or it is just broken
