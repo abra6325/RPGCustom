@@ -29,27 +29,27 @@ This error seldomly happens, but if you got kicked, reconnect, and you should be
 
 **Fixes**: Reconnect
 
-### `0xA00000B7` Disallowed for Unstable Network
+### `0x70000AB7` Disallowed for Unstable Network
 If you recieve this code, you probably should ~~get a better wifi router lmfao~~ check your internet connection and reconnect
 
 **Fixes**: Fix wifi + reconnect
 
-### `0xA0000015` Disallowed for Regulation Purposes
+### `0x70000A15` Disallowed for Regulation Purposes
 If you recieve this code, you are 99.99% banned from the server.
 
 **Fixes**: Try appealing, but it might not work.
 
-### `0xA0000016` Disallowed for Server Unexpected Error
+### `0x70000A16` Disallowed for Server Unexpected Error
 If you recieve this code, the server probably encountered an error.
 
 **Fixes**: Try reconnecting in a moment. If it doesnt work, the server might be in **Maintence Mode** or it is just broken
 
-### `0xB00000015` Kicked for Regulation Purposes
+### `0x700000B15` Kicked for Regulation Purposes
 If you recieve this code, you are 99.99% banned from the server.
 
 **Fixes**: Try appealing, but it might not work.
 
-### `0xB0000016` Disallowed for Server Unexpected Error
+### `0x70000B16` Disallowed for Server Unexpected Error
 If you recieve this code, the server probably encountered an error.
 
 **Fixes**: Try reconnecting in a moment. If it doesnt work, the server might be in **Maintence Mode** or it is just broken
