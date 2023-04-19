@@ -24,7 +24,13 @@ This is the most complicated part in the creation process. The scene is no longe
 Here are some codes that will display at the bottom of your disconnect screen:
 btw it could be a hex code or a string <3
 
-### `0x0000072` Disallowed for Invalid Connection Token
+### `0x00000000` Server Unknown Error
+**Aliases**: `E_RUNTIME_UNKNOWN`
+Any error other than the errors below.
+
+**Fixes**: Unknown, most likely due to a server error.
+
+### `0x00000072` Disallowed for Invalid Connection Token
 This error seldomly happens, but if you got kicked, reconnect, and you should be able to play again.
 
 **Fixes**: Reconnect
