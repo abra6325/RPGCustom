@@ -30,7 +30,18 @@ Any error other than the errors below.
 
 **Fixes**: Unknown, most likely due to a server error.
 
-### `0x00000072` Disallowed for Invalid Connection Token
+### `0x0000001D6` Disallowed for Not Enough Server Player Slots
+Server is full, yep just full. You have to **wait**
+
+**Fixes**: Wait
+
+### `0x000000172` Disallowed for Not Enough Permission
+You do not have the permission to access the server.
+HOWEVER you are not banned!
+
+**Fixes**: Contact server adminstrators if you believe you should be allowed to join this server.
+
+### `0x000000C3` Disallowed for Invalid Connection Token
 This error seldomly happens, but if you got kicked, reconnect, and you should be able to play again.
 
 **Fixes**: Reconnect
@@ -40,7 +51,12 @@ If you recieve this code, you probably should ~~get a better wifi router lmfao~~
 
 **Fixes**: Fix wifi + reconnect
 
-### `0x00000A15` Disallowed for Regulation Purposes
+### `0x0000010E` Disallowed for Other Reasons
+If you recieve this code, uhhhh, we dont have any solutions.
+
+**Fixes**: None
+
+### `0x0000023A` Disallowed for Regulation Purposes
 If you recieve this code, you are 99.99% banned from the server.
 
 **Fixes**: Try appealing, but it might not work.
