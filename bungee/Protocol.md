@@ -79,6 +79,18 @@ Send when sent. Sent when sending a player to another server.
 | 4 | Target Server Registery ID | String | The ID of the target server. | np3s |
 | 5 | Target Player Name | String | The player's name | Relizc |
 
+### `0xe8` Dynamic Server Request Connection by Category
+Almost the same as the packet above, but this sent when a player start matching a game and the server is going to send it to a random server with the following category.
+
+| Field | Name | Data Type | Description | Example |
+| --- | ----- | ------------ | ------------ | ------------ |
+| 0 | Packet ID | Byte | The packet ID that every packet should have. | 0xe0 |
+| 1 | RAM Code | Byte Enum | The RAM Code of the server. | 0x03 |
+| 2 | Server Registery ID | String | The ID Code of the server | np3s |
+| 3 | Target Server Category Type | Byte Enum | The target server type | 0x03 |
+| 4 | Target Server Sub-Category Type | Short Enum | The target server's sub category| np3s |
+| 5 | Target Player Name | String | The player's name | Relizc |
+
 ### `0xa0` Alert Message
 Make the protocol alert a message.
 | Field | Name | Data Type | Description | Example |
@@ -142,6 +154,16 @@ Yikes this server closed.
 | --- | ----- | ------------ | ------------ | ------------ |
 | 0 | Packet ID | Byte | The packet ID that every packet should have. | 0xf0 |
 | 1 | Servers | Type Array of Mixed Array | Server Details<br> | 0x00 |
+
+### `0xe8` Dynamic Server Request Connection by Category Complete
+When the client packet is sent, the server will respond with a list of 2 or more servers. This is used to prevent connection errors because the delay might just cause the server to fill up.
+
+| Field | Name | Data Type | Description | Example |
+| --- | ----- | ------------ | ------------ | ------------ |
+| 0 | Packet ID | Byte | The packet ID that every packet should have. | 0xe0 |
+| 1 | Target Server RAM ID | Byte Enum | The target server RAM ID | 0x01 |
+| 2 | Target Server ID | String | The target server's ID | np3s |
+| 3 | Target Player Name | String | The player's name | Relizc |
 
 **Here are current avaliable server categories `ID:SubCat`**:
 `0x00` Verification
