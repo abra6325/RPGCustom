@@ -156,14 +156,13 @@ Yikes this server closed.
 | 1 | Servers | Type Array of Mixed Array | Server Details<br> | 0x00 |
 
 ### `0xe8` Dynamic Server Request Connection by Category Complete
-When the client packet is sent, the server will respond with a list of 2 or more servers. This is used to prevent connection errors because the delay might just cause the server to fill up.
+When the client packet is sent, the server will respond with a list of 1 or more servers. This is used to prevent connection errors because the delay might just cause the server to fill up.
 
 | Field | Name | Data Type | Description | Example |
 | --- | ----- | ------------ | ------------ | ------------ |
 | 0 | Packet ID | Byte | The packet ID that every packet should have. | 0xe0 |
 | 1 | Target Server RAM ID | Byte Enum | The target server RAM ID | 0x01 |
 | 2 | Target Server ID | String | The target server's ID | np3s |
-| 3 | Target Player Name | String | The player's name | Relizc |
 
 **Here are current avaliable server categories `ID:SubCat`**:
 `0x00` Verification
