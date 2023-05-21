@@ -33,6 +33,8 @@ Handshaking is the first ever packet a server should sent to the managing system
 | 5 | Server Type | Nullable String Enum | The server's type. Used to specify categories of avaliable servers | LOCAL_DUNGEON_SCENE_VIEWER |
 | 6 | Port | Short | Server Port. Used to verify packet integrity. | 11451 |
 
+
+
 **Example Python Packet Data**:
 b"\x01\x02\x0e\x00standard-1.8.8\x04\x00np3s\x00\x2estandard-1.8.8_Dungeon_Main_Lobby_snp3s_public\x00\x1aLOCAL_DUNGEON_SCENE_VIEWER\xbb\x2c"
 
@@ -47,6 +49,15 @@ This ping packet should be sent whenever as possible. This packet should also be
 | 4 | Server TPS | Double | The current TPS of the server. | 114.514 |
 | 5 | Server RAM Usage | Long | The amount of RAM used by the server in MB | 114514 |
 | 6 | Server Players | Type Array of Mixed Array | An array of player data.<br><table>    <thead>        <tr>            <th>Data Type</th>            <th>Field</th>            <th>Name</th>            <th>Data Type</th>            <th>Description</th>        </tr>    </thead>    <tr>        <td rowspan="4">Mixed Array</td>        <td>0</td>        <td>Player Name</td>        <td>String</td>        <td>The player\'s IGN. All lowercase.</td>    </tr>    <tr>        <td>1</td>        <td>Has UUID</td>        <td>Boolean</td>        <td>Whether the player has an UUID or not. If this is true, the procotol will not skip the next field.</td>    </tr>    <tr>        <td>2</td>        <td>Player UUID</td>        <td>String</td>        <td>The player\'s UUID. This field will be present if field 1 is true. </td>    </tr>    <tr>        <td>3</td>        <td>Is Moderator</td>        <td>Boolean</td>        <td>Whether this player is a moderator or not. </td>    </tr></table>  |
+
+
+### `0x83` Player Info
+Request for a player's info. Their real name, their ip address, and others.
+This is useful when fetching a player's real UUID, since uuids are random in offline mode servers.
+| Field | Name | Data Type | Description | Example |
+| --- | ----- | ------------ | ------------ | ------------ |
+| 0 | Packet ID | Byte | The packet ID that every packet should have. | 0x01 |
+| 1 | Player Name | String | The player's name | Relizc |
 
 ### `0xe0` BungeeCord Ping
 It is the same ping packet as the previous one, except for this one is sent by the bungeecord plugin.
@@ -114,6 +125,15 @@ Sends whenever a server log is made.
 
 ## Server Packets
 Packets that are send by the managing system **only after a ping packet is sent by the client.**
+
+### `0x83` Player Info
+Request for a player's info. Their real name, their ip address, and others.
+This is useful when fetching a player's real UUID, since uuids are random in offline mode servers.
+| Field | Name | Data Type | Description | Example |
+| --- | ----- | ------------ | ------------ | ------------ |
+| 0 | Packet ID | Byte | The packet ID that every packet should have. | 0x01 |
+| 1 | Player Name | String | The player's name | Relizc |
+| 2 | Real UUID | String | The player's name | c364b276-34f5-4270-9d80-1780425d62c6 |
 
 ### `0xb0` Kick Player
 Make the server kick a player from it (kicking the player out of the proxy)
