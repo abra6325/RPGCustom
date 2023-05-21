@@ -57,7 +57,14 @@ This is useful when fetching a player's real UUID, since uuids are random in off
 | Field | Name | Data Type | Description | Example |
 | --- | ----- | ------------ | ------------ | ------------ |
 | 0 | Packet ID | Byte | The packet ID that every packet should have. | 0x01 |
-| 1 | Player Name | String | The player's name | Relizc |
+| 1 | Mode | Byte Enum | The byte used to determine whether is the bungeecord sending a create player info packet or a client sending a request player packet. | Relizc |
+
+**Mode:** `0x00` (BungeeCord: Create Player Info)
+| 2 | Player Name | String | The player's name | Relizc |
+| 3 | Real UUID | String | The player's real uuid (from mojang) | c364b276-34f5-4270-9d80-1780425d62c6 |
+
+**Mode:** `0x01` (Server: Request real uuid)
+| 2 | Player Name | String | The player's name | Relizc |
 
 ### `0xe0` BungeeCord Ping
 It is the same ping packet as the previous one, except for this one is sent by the bungeecord plugin.
