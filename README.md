@@ -30,12 +30,15 @@ Any error other than the errors below.
 
 **Fixes**: Unknown, most likely due to a server error.
 
-### `0x0000001D6` Disallowed for Not Enough Server Player Slots
+### `0x00000083` Unexpected Kick
+A kick had occured in your connection. Most likely due to moderation purposes.
+
+### `0x000001D6` Disallowed for Not Enough Server Player Slots
 Server is full, yep just full. You have to **wait**
 
 **Fixes**: Wait
 
-### `0x000000172` Disallowed for Not Enough Permission
+### `0x00000172` Disallowed for Not Enough Permission
 You do not have the permission to access the server.
 HOWEVER you are not banned!
 
