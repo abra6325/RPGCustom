@@ -75,17 +75,19 @@ This is useful when fetching a player's real UUID, since uuids are random in off
 | --- | ----- | ------------ | ------------ | ------------ |
 | 0 | Packet ID | Byte | The packet ID that every packet should have. | 0x51 |
 | 1 | Info Type | Byte Enum | The field that the server want to change | 0x00 |
+| 2 | RAM Code | Byte Enum | The RAM Code of the server. Used to identify the server. | 0x03 |
+| 3 | Server Registery ID | String | The server ID. Also used to identify the server. | np3s |
 
 Here are some avaliable info types:
 **0x00**: Name
 | Field | Name | Data Type | Description | Example |
 | --- | ----- | ------------ | ------------ | ------------ |
-| 2 | Value | String | The new name to change to | Shabby |
+| 4 | Value | String | The new name to change to | Shabby |
 
 **0x01**: Attitude (Status)
 | Field | Name | Data Type | Description | Example |
 | --- | ----- | ------------ | ------------ | ------------ |
-| 2 | Value | String | The new status to change to | Shabby |
+| 4 | Value | String | The new status to change to | Shabby |
 
 ### `0xe0` BungeeCord Ping
 It is the same ping packet as the previous one, except for this one is sent by the bungeecord plugin.
