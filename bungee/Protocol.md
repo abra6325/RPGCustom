@@ -79,10 +79,12 @@ This is useful when fetching a player's real UUID, since uuids are random in off
 Here are some avaliable info types:
 **0x00**: Name
 | Field | Name | Data Type | Description | Example |
+| --- | ----- | ------------ | ------------ | ------------ |
 | 2 | Value | String | The new name to change to | Shabby |
 
 **0x01**: Attitude (Status)
 | Field | Name | Data Type | Description | Example |
+| --- | ----- | ------------ | ------------ | ------------ |
 | 2 | Value | String | The new status to change to | Shabby |
 
 ### `0xe0` BungeeCord Ping
