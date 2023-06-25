@@ -75,13 +75,13 @@ This is useful when fetching a player's real UUID, since uuids are random in off
 | --- | ----- | ------------ | ------------ | ------------ |
 | 0 | Packet ID | Byte | The packet ID that every packet should have. | 0x51 |
 | 1 | Info Type | Byte Enum | The field that the server want to change | 0x00 |
+
 Here are some avaliable info types:
 **0x00**: Name
 | 2 | Value | String | The new name to change to | Shabby |
+
 **0x01**: Attitude (Status)
 | 2 | Value | String | The new status to change to | Shabby |
-
-| 2 | Real UUID | String | The player's real uuid (from mojang) | c364b276-34f5-4270-9d80-1780425d62c6 |
 
 ### `0xe0` BungeeCord Ping
 It is the same ping packet as the previous one, except for this one is sent by the bungeecord plugin.
