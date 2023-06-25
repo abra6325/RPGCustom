@@ -70,7 +70,7 @@ This is useful when fetching a player's real UUID, since uuids are random in off
 | --- | ----- | ------------ | ------------ | ------------ |
 | 2 | Player Name | String | The player's name | Relizc |
 
-**Mode:** `0x51` Server Change ServerInfo
+### `0x51` Server Change ServerInfo
 | Field | Name | Data Type | Description | Example |
 | --- | ----- | ------------ | ------------ | ------------ |
 | 0 | Packet ID | Byte | The packet ID that every packet should have. | 0x51 |
