@@ -1,6 +1,13 @@
 # Relizc Network Protocol Information
 This part will just simply introduce the basic annotations and data structure of different packets sent by the network managing system. This system uses a TCP socket that each server can communicate with each other by the management system
 
+## Bookmarks
+1. [Data Types](#data-types)
+2. [Client Packets](#client-packets)
+   1. `0x01` [Handshake](#00)
+4. [Third Example](#third-example)
+5. [Fourth Example](#fourth-examplehttpwwwfourthexamplecom)
+
 ## Data Types
 Here are some common data types that will be used in the protocol. Every data is written or encoded in [Little-Endian](https://en.wikipedia.org/wiki/Endianness).
 However tho, you might ask why is an integer only composed of 4 bytes, not 8? Because our protocol is encoded in unsigned bytes (0x00 ~ 0xff) instead of signed bytes (0x00 ~ 0x7f). This gives us an additional of one byte for each byte, basically halving the protocol packet size.
@@ -22,7 +29,7 @@ However tho, you might ask why is an integer only composed of 4 bytes, not 8? Be
 Packets that are send by the client.
 
 
-### `0x01` Handshake
+### `0x01` Handshake <a name="00"></a>
 Handshaking is the first ever packet a server should sent to the managing system, and for registering properly. It could also be used to change a server's status from `LAUNCHING` to `RUNNING`.
 | Field | Name | Data Type | Description | Example |
 | --- | ----- | ------------ | ------------ | ------------ |
