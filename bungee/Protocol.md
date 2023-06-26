@@ -3,6 +3,7 @@ This part will just simply introduce the basic annotations and data structure of
 
 ## Data Types
 Here are some common data types that will be used in the protocol. Every data is written or encoded in [Little-Endian](https://en.wikipedia.org/wiki/Endianness).
+However tho, you might ask why is an integer only composed of 4 bytes, not 8? Because our protocol is encoded in unsigned bytes (0x00 ~ 0xff) instead of signed bytes (0x00 ~ 0x7f). This gives us an additional of one byte for each byte, basically halving the protocol packet size.
 | Type | Bytes | Description | Example | Type Byte |
 | ---------- | --- | ---------------------------- | ----- | ----- |
 | Byte | 1 | The most basic component of the packet data. Only takes 1 byte, and the values range from 0 ~ 255. | 0xf5 | 0x00
@@ -32,8 +33,6 @@ Handshaking is the first ever packet a server should sent to the managing system
 | 4 | Server Name | String | The name of this server. **If the server is already initlized in the control panel, the new name will overlap its old name** | standard-1.8.8_Dungeon_Main_Lobby_snp3s_public |
 | 5 | Server Type | Nullable String Enum | The server's type. Used to specify categories of avaliable servers | LOCAL_DUNGEON_SCENE_VIEWER |
 | 6 | Port | Short | Server Port. Used to verify packet integrity. | 11451 |
-
-
 
 **Example Python Packet Data**:
 b"\x01\x02\x0e\x00standard-1.8.8\x04\x00np3s\x00\x2estandard-1.8.8_Dungeon_Main_Lobby_snp3s_public\x00\x1aLOCAL_DUNGEON_SCENE_VIEWER\xbb\x2c"
