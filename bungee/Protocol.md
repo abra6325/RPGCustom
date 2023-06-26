@@ -108,7 +108,7 @@ This packet is sent by the client when it needs to fetch all the server data. It
 | --- | ----- | ------------ | ------------ | ------------ |
 | 0 | Packet ID | Byte | The packet ID that every packet should have. | 0xe0 |
 
-### `0xe9` Dynamic Server Request Connection
+### `0xe8` Request Connection
 Send when sent. Sent when sending a player to another server.
 
 | Field | Name | Data Type | Description | Example |
@@ -116,21 +116,27 @@ Send when sent. Sent when sending a player to another server.
 | 0 | Packet ID | Byte | The packet ID that every packet should have. | 0xe0 |
 | 1 | RAM Code | Byte Enum | The RAM Code of the server. | 0x03 |
 | 2 | Server Registery ID | String | The ID Code of the server | np3s |
-| 3 | Target Server RAM Code | Byte Enum | The RAM Code of the target server. | 0x03 |
-| 4 | Target Server Registery ID | String | The ID of the target server. | np3s |
-| 5 | Target Player Name | String | The player's name | Relizc |
+| 3 | Mode | Byte Enum | Specify the mode of connection | 0x00 |
 
-### `0xe8` Dynamic Server Request Connection by Category
-Almost the same as the packet above, but this sent when a player start matching a game and the server is going to send it to a random server with the following category.
-
+`0x00` **Mode**: Connect by target ID<br>
 | Field | Name | Data Type | Description | Example |
 | --- | ----- | ------------ | ------------ | ------------ |
-| 0 | Packet ID | Byte | The packet ID that every packet should have. | 0xe0 |
-| 1 | RAM Code | Byte Enum | The RAM Code of the server. | 0x03 |
-| 2 | Server Registery ID | String | The ID Code of the server | np3s |
-| 3 | Target Server Category Type | Byte Enum | The target server type | 0x03 |
-| 4 | Target Server Sub-Category Type | Short Enum | The target server's sub category| np3s |
-| 5 | Target Player Name | String | The player's name | Relizc |
+| 4 | Target Server RAM Code | Byte Enum | The RAM Code of the target server. | 0x03 |
+| 5 | Target Server Registery ID | String | The ID of the target server. | np3s |
+| 6 | Target Player Name | String | The player's name | Relizc |
+
+`0x01` **Mode**: Connect by target category<br>
+| Field | Name | Data Type | Description | Example |
+| --- | ----- | ------------ | ------------ | ------------ |
+| 4 | Target Server Category Type | Byte Enum | The target server type | 0x03 |
+| 5 | Target Server Sub-Category Type | Short Enum | The target server's sub category| np3s |
+| 6 | Target Player Name | String | The player's name | Relizc |
+
+`0x02` **Mode**: Connect by evacuation<br>
+This is called when the target server is closing and an evacuation is needed.
+| Field | Name | Data Type | Description | Example |
+| --- | ----- | ------------ | ------------ | ------------ |
+| 4 | Target Player Name | String | The player's name | Relizc |
 
 ### `0xa0` Alert Message
 Make the protocol alert a message.
