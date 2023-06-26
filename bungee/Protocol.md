@@ -5,6 +5,13 @@ This part will just simply introduce the basic annotations and data structure of
 1. [Data Types](#data-types)
 2. [Client Packets](#client-packets)
    1. `0x01` [Handshake](#00)
+   2. `0xf0` [Ping](#f0)
+   3. `0x83` [Player Info](#83)
+   4. `0x51` [Server Change ServerInfo](#51)
+   5. `0xe0` [BungeeCord Ping](#00)
+   6. `0xe1` [BungeeCord Login OK](#e1)
+   7. `0xe2` [BungeeCord Get PlayerInfo](#e2)
+   8. `0xe8` [Server Request Connection](#e8)
 4. [Third Example](#third-example)
 5. [Fourth Example](#fourth-examplehttpwwwfourthexamplecom)
 
@@ -44,7 +51,7 @@ Handshaking is the first ever packet a server should sent to the managing system
 **Example Python Packet Data**:
 b"\x01\x02\x0e\x00standard-1.8.8\x04\x00np3s\x00\x2estandard-1.8.8_Dungeon_Main_Lobby_snp3s_public\x00\x1aLOCAL_DUNGEON_SCENE_VIEWER\xbb\x2c"
 
-### `0xf0` Ping
+### `0xf0` Ping <a name="f0"></a>
 This ping packet should be sent whenever as possible. This packet should also be put into a thread, since the managing system will pong back at most 1 seconds after this packet is sent. However, the managing system will send back the packet as soon as possible if there is an operation needed. All packets sent back by the managing system will be considered as [Server Packets](https://github.com/abra6325/RPGCustom/blob/master/bungee/Protocol.md#server-packets). The ping packet should also include update information of the server.
 | Field | Name | Data Type | Description | Example |
 | --- | ----- | ------------ | ------------ | ------------ |
@@ -57,7 +64,7 @@ This ping packet should be sent whenever as possible. This packet should also be
 | 6 | Server Players | Type Array of Mixed Array | An array of player data.<br><table>    <thead>        <tr>            <th>Data Type</th>            <th>Field</th>            <th>Name</th>            <th>Data Type</th>            <th>Description</th>        </tr>    </thead>    <tr>        <td rowspan="4">Mixed Array</td>        <td>0</td>        <td>Player Name</td>        <td>String</td>        <td>The player\'s IGN. All lowercase.</td>    </tr>    <tr>        <td>1</td>        <td>Has UUID</td>        <td>Boolean</td>        <td>Whether the player has an UUID or not. If this is true, the procotol will not skip the next field.</td>    </tr>    <tr>        <td>2</td>        <td>Player UUID</td>        <td>String</td>        <td>The player\'s UUID. This field will be present if field 1 is true. </td>    </tr>    <tr>        <td>3</td>        <td>Is Moderator</td>        <td>Boolean</td>        <td>Whether this player is a moderator or not. </td>    </tr></table>  |
 
 
-### `0x83` Player Info
+### `0x83` Player Info <a name="83"></a>
 Request for a player's info. Their real name, their ip address, and others.
 This is useful when fetching a player's real UUID, since uuids are random in offline mode servers.
 | Field | Name | Data Type | Description | Example |
@@ -76,7 +83,7 @@ This is useful when fetching a player's real UUID, since uuids are random in off
 | --- | ----- | ------------ | ------------ | ------------ |
 | 2 | Player Name | String | The player's name | Relizc |
 
-### `0x51` Server Change ServerInfo
+### `0x51` Server Change ServerInfo <a name="51"></a>
 | Field | Name | Data Type | Description | Example |
 | --- | ----- | ------------ | ------------ | ------------ |
 | 0 | Packet ID | Byte | The packet ID that every packet should have. | 0x51 |
@@ -95,26 +102,26 @@ Here are some avaliable info types:
 | --- | ----- | ------------ | ------------ | ------------ |
 | 4 | Value | String | The new status to change to | Shabby |
 
-### `0xe0` BungeeCord Ping
+### `0xe0` BungeeCord Ping <a name="e0"></a>
 It is the same ping packet as the previous one, except for this one is sent by the bungeecord plugin.
 | Field | Name | Data Type | Description | Example |
 | --- | ----- | ------------ | ------------ | ------------ |
 | 0 | Packet ID | Byte | The packet ID that every packet should have. | 0xe0 |
 | 1 | Player Amount | Short | The number of players | 11451 |
 
-### `0xe1` BungeeCord Login Sucess
+### `0xe1` BungeeCord Login Sucess <a name="e1"></a>
 Yay bungeecord is ready.
 | Field | Name | Data Type | Description | Example |
 | --- | ----- | ------------ | ------------ | ------------ |
 | 0 | Packet ID | Byte | The packet ID that every packet should have. | 0xe0 |
 
-### `0xe2` Request Getting BungeeCord Servers
+### `0xe2` Request Getting BungeeCord Servers <a name="e2"></a>
 This packet is sent by the client when it needs to fetch all the server data. It will return a packet with all servers
 | Field | Name | Data Type | Description | Example |
 | --- | ----- | ------------ | ------------ | ------------ |
 | 0 | Packet ID | Byte | The packet ID that every packet should have. | 0xe0 |
 
-### `0xe8` Request Connection
+### `0xe8` Request Connection <a name="e8"></a>
 Send when sent. Sent when sending a player to another server.
 
 | Field | Name | Data Type | Description | Example |
@@ -144,7 +151,7 @@ This is called when the target server is closing and an evacuation is needed.
 | --- | ----- | ------------ | ------------ | ------------ |
 | 4 | Target Player Name | String | The player's name | Relizc |
 
-### `0xa0` Alert Message
+### `0xa0` Alert Message <a name="a0"></a>
 Make the protocol alert a message.
 | Field | Name | Data Type | Description | Example |
 | --- | ----- | ------------ | ------------ | ------------ |
@@ -154,7 +161,7 @@ Make the protocol alert a message.
 | 3 | Message Type | Byte Enum | The message type.<br><br>`0x00` Info<br>`0x01` Warning<br>`0x02` Error | 0x02 |
 | 4 | Message | String | The message that you want to send. | Whats going on??? HEYYYA |
 
-### `0xa1` Commit Log
+### `0xa1` Commit Log <a name="a1"></a>
 Sends whenever a server log is made.
 | Field | Name | Data Type | Description | Example |
 | --- | ----- | ------------ | ------------ | ------------ |
